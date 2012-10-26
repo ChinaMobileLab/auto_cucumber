@@ -1,4 +1,8 @@
 MobileTestWeb::Application.routes.draw do
+  get "scenario/add"
+
+  root :to => 'scenario#add'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
