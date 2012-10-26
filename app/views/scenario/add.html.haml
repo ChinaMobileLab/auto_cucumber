@@ -1,20 +1,17 @@
 .content
-  .item Add
-  .item.app_title 
-    Application Title      
-    %select#scenario_title
-      %option{ :value => "ss"} oo
-      %option{ :value => "dd"} pp
-  %textarea.item#scenario_feature{ :type => 'text'} 
-  .item
-    Given
-    %select#scenario_predifined_given
-      %option{ :value => "ss"} oo
-      %option{ :value => "dd"} pp
-  %textarea.item#scenario_given{ :type => 'text'} 
-  .item When
-  %textarea.item#scenario_when{ :type => 'text'} 
-  .item Then
-  %textarea.item#scenario_then{ :type => 'text'} 
-  
-    
+  = form_for @scenario, :url => scenario_create_path do |form|
+    .item
+      Application Title 
+      = form.select :sc_type, options_for_select(["Automation", "Manuual"])  
+    .item= form.text_area :sc_title
+    .item
+      Given    
+      = form.text_area :sc_given
+    .item
+      When    
+      = form.text_area :sc_when
+    .item
+      Then    
+      = form.text_area :sc_then
+    .item.submit
+      = form.submit "Add"

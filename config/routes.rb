@@ -1,7 +1,10 @@
 MobileTestWeb::Application.routes.draw do
-  get "scenario/add"
-
   root :to => 'scenario#add'
+  get "scenario/add"
+  get "scenario/succeed"
+  post "scenario/create"
+  
+  # match 'succeed' => 'scenario#succeed', :as => 'succeed', :via => :get
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

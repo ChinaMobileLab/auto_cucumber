@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class ScenarioControllerTest < ActionController::TestCase
-  test "should get add" do
-    get :add
+  test "should get succeed" do
+    get :succeed
     assert_response :success
   end
 
