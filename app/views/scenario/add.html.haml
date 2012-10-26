@@ -1,0 +1,20 @@
+.content
+  .item Add
+  .item.app_title 
+    Application Title      
+    %select#scenario_title
+      %option{ :value => "ss"} oo
+      %option{ :value => "dd"} pp
+  %textarea.item#scenario_feature{ :type => 'text'} 
+  .item
+    Given
+    %select#scenario_predifined_given
+      %option{ :value => "ss"} oo
+      %option{ :value => "dd"} pp
+  %textarea.item#scenario_given{ :type => 'text'} 
+  .item When
+  %textarea.item#scenario_when{ :type => 'text'} 
+  .item Then
+  %textarea.item#scenario_then{ :type => 'text'} 
+  
+    

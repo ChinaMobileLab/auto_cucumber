@@ -1,4 +1,7 @@
 class ScenarioController < ApplicationController
-  def add
+
+	def add
+  	@scenario = Scenario.new( )
+  	puts @scenaro
   end
 end

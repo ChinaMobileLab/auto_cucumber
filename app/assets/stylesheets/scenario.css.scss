@@ -1,3 +1,25 @@
-// Place all the styles related to the Scenario controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$default-font-color: #333;
+
+
+body { background-color: #fff; color: $default-font-color; }
+
+.content {
+	margin: 0 auto;
+	width: 430px;
+	background-color: #eee;
+
+	.item {
+		margin:10px;
+
+		select {
+			float:right;
+			width:280px;
+		}
+	}
+
+	textarea {
+			width: 400px;
+			height:60px;
+	}
+
+}
