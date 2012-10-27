@@ -8,11 +8,9 @@ module FormHelper
 	end
 
 	def selections_for( tag )
-		all = eval( "#{tag.capitalize}Condition" ).all.map do |each_condition|
+		eval( "#{tag.capitalize}Condition" ).all.map do |each_condition|
 			each_condition.text
 		end
-		( ["-"] << all ).flatten
-		all
 	end
 
 end
