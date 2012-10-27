@@ -1,26 +1,12 @@
-class Scenario
-	extend ActiveModel::Naming
-	include ActiveModel::Conversion
+class Scenario < ActiveRecord::Base
 	include ScenarioHelper
 
-	attr_accessor :sc_type, :sc_given, :sc_when, :sc_then
+	has_many :given_conditions
+	has_many :when_conditions
+	has_many :then_conditions
 
-	def initialize( attributes = {} )
-		attributes.each_pair do |key, value|
-			send "#{key}=", value
-		end
-
-	end
-
-	def persisted?
-    false
-  end
-
-  def save
-		File.open("features_created/test.feature", "a") do |file|
-			file.puts to_s
-			file.puts
-		end
-  end
-
+	accepts_nested_attributes_for :given_conditions, :when_conditions, :then_conditions
+	
+  attr_accessible :type, :given_conditions_attributes, :when_conditions_attributes, :then_conditions_attributes
+  
 end
