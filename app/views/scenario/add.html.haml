@@ -1,10 +1,13 @@
 .content
+
   = form_for @scenario, :url => scenario_create_path do |form|
     .item
       Application Title 
       = form.select :sc_type, options_for_select(["Automation", "Manuual"])  
     .item
+
       Given    
+
       = form.text_area :sc_given
     .item
       When    
