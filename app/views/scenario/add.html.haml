@@ -4,7 +4,7 @@
 
     .small-item
       Application Title 
-      = form.select :category, options_for_select(["Automation", "Manuual"])  
+      = form.select :category, options_for_select( ["Automation", "Manuual"] )  
 
     .small-item
       Scenario
@@ -13,7 +13,7 @@
     .item
 
       Given    
-
+      = select_tag :histoy_givens, options_for_select( selections_for(:given) ), :include_blank => true
       = form.fields_for :given_conditions do |item_form|
         = item_form.text_area :text
         = item_form.link_to_remove "Remove"

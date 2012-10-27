@@ -10,11 +10,11 @@ body { background-color: #fff; color: $default-font-color; }
 
 	.small-item {
 		margin:10px;
-		
-		select {
-			float:right;
-			width:280px;
-		}
+	}
+
+	select {
+		float:right;
+		width:280px;
 	}
 
 	.item {
