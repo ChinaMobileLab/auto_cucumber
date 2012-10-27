@@ -4,7 +4,10 @@
 
     .item
       Application Title 
-      = form.select :type, options_for_select(["Automation", "Manuual"])  
+      = form.select :category, options_for_select(["Automation", "Manuual"])  
+
+    .item
+      = form.text_area :title
 
     .item
 

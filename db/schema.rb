@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121027055925) do
+ActiveRecord::Schema.define(:version => 20121027071744) do
 
   create_table "given_conditions", :force => true do |t|
     t.string   "text"
@@ -21,9 +21,10 @@ ActiveRecord::Schema.define(:version => 20121027055925) do
   end
 
   create_table "scenarios", :force => true do |t|
-    t.string   "type"
+    t.string   "category"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "title"
   end
 
   create_table "then_conditions", :force => true do |t|
