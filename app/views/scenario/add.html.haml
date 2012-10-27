@@ -2,11 +2,12 @@
 
   = nested_form_for (setup_conditions(@scenario)), :url => scenario_create_path do |form|
 
-    .item
+    .small-item
       Application Title 
       = form.select :category, options_for_select(["Automation", "Manuual"])  
 
-    .item
+    .small-item
+      Scenario
       = form.text_area :title
 
     .item
@@ -39,7 +40,4 @@
 
       = form.link_to_add "Add a Then condition", :then_conditions      
       
-
-    .item.submit
-
-      = form.submit "Add"
+    .submit= form.submit "Add"
