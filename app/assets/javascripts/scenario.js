@@ -4,5 +4,9 @@ $(document).ready(function(){
   	var last_field = $("#histoy_givens").parent().children(".fields").last()
   	$(last_field).children("textarea").val(selected)
   });
-     
+   
+  $(".remove_nested_fields").live('click', function(){
+  	$(this).parent().remove()
+  });
+
 });
