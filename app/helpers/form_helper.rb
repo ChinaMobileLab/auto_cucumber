@@ -10,7 +10,7 @@ module FormHelper
 	def selections_for( tag )
 		Condition.where("tag = '#{tag}'").map do|condition|
 			condition.text
-		end
+		end.uniq
 	end
 
 end
