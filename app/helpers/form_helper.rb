@@ -1,15 +1,15 @@
 module FormHelper
 
 	def setup_conditions( scenario )
-		scenario.given_conditions << GivenCondition.new
-		scenario.when_conditions << WhenCondition.new
-		scenario.then_conditions << ThenCondition.new
+		scenario.given_conditions << Condition.new( :tag => "given" )
+		scenario.when_conditions << Condition.new( :tag => "when" )
+		scenario.then_conditions << Condition.new( :tag => "then" )
 		scenario
 	end
 
 	def selections_for( tag )
-		eval( "#{tag.capitalize}Condition" ).all.map do |each_condition|
-			each_condition.text
+		Condition.where("tag = '#{tag}'").map do|condition|
+			condition.text
 		end
 	end
 

@@ -5,7 +5,9 @@ class ScenarioController < ApplicationController
 	end
 
 	def create
-  	Scenario.create( params[:scenario] ).save_to_file
+		scenario_file = ScenarioFile.new
+  	scenario_file.save_scenario Scenario.create( params[:scenario] )
+
   	redirect_to :action => 'succeed'
   end
 

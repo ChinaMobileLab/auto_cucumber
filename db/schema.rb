@@ -11,34 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121027071744) do
+ActiveRecord::Schema.define(:version => 20121031075611) do
 
-  create_table "given_conditions", :force => true do |t|
+  create_table "conditions", :force => true do |t|
     t.string   "text"
+    t.string   "tag"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.integer  "scenario_id"
   end
 
   create_table "scenarios", :force => true do |t|
-    t.string   "category"
+    t.string   "tag"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "title"
-  end
-
-  create_table "then_conditions", :force => true do |t|
-    t.string   "text"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.integer  "scenario_id"
-  end
-
-  create_table "when_conditions", :force => true do |t|
-    t.string   "text"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.integer  "scenario_id"
   end
 
 end
