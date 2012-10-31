@@ -10,34 +10,13 @@
       Scenario
       = form.text_area :title
 
-    .item
-
-      Given    
-      = select_tag :histoy_givens, options_for_select( selections_for('given') ), :include_blank => true
-      = form.fields_for :given_conditions do |item_form|
-        = item_form.text_area :text
-        = item_form.link_to_remove "Remove"
-  
-      = form.link_to_add "Add a Given condition", :given_conditions    
-
-    .item
-
-      When    
-    
-      = form.fields_for :when_conditions do |item_form|
-        = item_form.text_area :text
-        = item_form.link_to_remove "Remove"
-
-      = form.link_to_add "Add a When condition", :when_conditions      
-
-    .item
-
-      Then
-    
-      = form.fields_for :then_conditions do |item_form|
-        = item_form.text_area :text
-        = item_form.link_to_remove "Remove"
-
-      = form.link_to_add "Add a Then condition", :then_conditions      
-      
+    - %w(given when then).each do|item|
+      .item
+        = item.capitalize
+        = select_tag "histoy_#{item}s", options_for_select( selections_for("#{item}") ), :include_blank => true if item =~ /given/
+        = form.fields_for "#{item}_conditions" do |item_form|
+          = item_form.text_area :text
+          = item_form.link_to_remove "Remove"
+        = form.link_to_add( "Add a #{item} condition", "#{item}_conditions".to_sym )
+        
     .submit= form.submit "Add"
